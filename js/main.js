@@ -89,13 +89,13 @@ function initAmountButtons() {
     function updateTierDisplay(amount) {
         let tier = 'Select an amount';
 
-        if (amount >= 100) {
+        if (amount >= 250) {
             tier = `Legend ($${amount})`;
-        } else if (amount >= 50) {
+        } else if (amount >= 100) {
             tier = `Benefactor ($${amount})`;
-        } else if (amount >= 25) {
+        } else if (amount >= 50) {
             tier = `Patron ($${amount})`;
-        } else if (amount >= 10) {
+        } else if (amount >= 25) {
             tier = `Supporter ($${amount})`;
         } else if (amount >= 1) {
             tier = `Participant ($${amount})`;
@@ -106,7 +106,7 @@ function initAmountButtons() {
     }
 
     function updateShippingVisibility(amount) {
-        if (amount >= 10) {
+        if (amount >= 25) {
             shippingFields.style.display = 'block';
         } else {
             shippingFields.style.display = 'none';
@@ -153,10 +153,10 @@ function initDonationForm() {
  * Get Tier from Amount
  */
 function getTierFromAmount(amount) {
-    if (amount >= 100) return 'Legend';
-    if (amount >= 50) return 'Benefactor';
-    if (amount >= 25) return 'Patron';
-    if (amount >= 10) return 'Supporter';
+    if (amount >= 250) return 'Legend';
+    if (amount >= 100) return 'Benefactor';
+    if (amount >= 50) return 'Patron';
+    if (amount >= 25) return 'Supporter';
     return 'Participant';
 }
 

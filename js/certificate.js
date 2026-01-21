@@ -16,10 +16,10 @@ function generateCertificateNumber() {
  * Get tier name from donation amount
  */
 function getCertificateTier(amount) {
-    if (amount >= 100) return 'LEGEND';
-    if (amount >= 50) return 'BENEFACTOR';
-    if (amount >= 25) return 'PATRON';
-    if (amount >= 10) return 'SUPPORTER';
+    if (amount >= 250) return 'LEGEND';
+    if (amount >= 100) return 'BENEFACTOR';
+    if (amount >= 50) return 'PATRON';
+    if (amount >= 25) return 'SUPPORTER';
     return 'PARTICIPANT';
 }
 
