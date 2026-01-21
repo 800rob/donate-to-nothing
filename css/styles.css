@@ -280,6 +280,62 @@ body {
 }
 
 /* ==========================================
+   Impact Section (Where Your Money Goes)
+   ========================================== */
+.impact {
+    padding: 100px 0;
+    background: var(--navy-dark);
+    color: var(--white);
+}
+
+.impact .section-title {
+    color: var(--gold);
+}
+
+.impact .section-subtitle {
+    color: var(--gray-light);
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.impact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.impact-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.impact-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.impact-card h3 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-family: var(--font-accent);
+}
+
+.impact-card p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ==========================================
    Tiers Section
    ========================================== */
 .tiers {
