@@ -72,6 +72,42 @@ async function initLeaderboard() {
 }
 
 /**
+ * Parse date from Google Sheets
+ * Handles formats like: Date(2026,0,21), "2026-01-21", "1/21/2026", or formatted string
+ */
+function parseGoogleSheetsDate(cell) {
+    if (!cell) return new Date().toISOString().split('T')[0];
+
+    // Check for formatted value first (what the user sees in the sheet)
+    if (cell.f) {
+        const parsed = new Date(cell.f);
+        if (!isNaN(parsed)) return parsed.toISOString().split('T')[0];
+    }
+
+    // Check raw value
+    const value = cell.v;
+    if (!value) return new Date().toISOString().split('T')[0];
+
+    // Handle Google Sheets Date() format: "Date(2026,0,21)"
+    if (typeof value === 'string' && value.startsWith('Date(')) {
+        const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
+        if (match) {
+            const year = parseInt(match[1]);
+            const month = parseInt(match[2]); // 0-indexed
+            const day = parseInt(match[3]);
+            return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        }
+    }
+
+    // Try parsing as regular date string
+    const parsed = new Date(value);
+    if (!isNaN(parsed)) return parsed.toISOString().split('T')[0];
+
+    // Fallback
+    return new Date().toISOString().split('T')[0];
+}
+
+/**
  * Fetch data from Google Sheets
  */
 async function fetchFromGoogleSheets() {
@@ -102,7 +138,7 @@ async function fetchFromGoogleSheets() {
                 name: isAnonymous ? 'Anonymous' : (row.c[0]?.v || 'Anonymous'),
                 tier: row.c[1]?.v || 'Participant',
                 amount: parseFloat(row.c[2]?.v) || 0,
-                date: row.c[3]?.v || new Date().toISOString().split('T')[0]
+                date: parseGoogleSheetsDate(row.c[3])
             };
         });
 }
