@@ -15,16 +15,16 @@ const LEADERBOARD_CONFIG = {
 
     // Demo data for testing
     demoData: [
-        { rank: 1, name: 'Anonymous', tier: 'Legend', amount: 150, date: '2024-01-15' },
-        { rank: 2, name: 'John D.', tier: 'Legend', amount: 100, date: '2024-01-14' },
-        { rank: 3, name: 'Sarah M.', tier: 'Benefactor', amount: 75, date: '2024-01-13' },
-        { rank: 4, name: 'Anonymous', tier: 'Benefactor', amount: 50, date: '2024-01-12' },
-        { rank: 5, name: 'Mike T.', tier: 'Patron', amount: 40, date: '2024-01-11' },
-        { rank: 6, name: 'Emily R.', tier: 'Patron', amount: 25, date: '2024-01-10' },
-        { rank: 7, name: 'Anonymous', tier: 'Supporter', amount: 20, date: '2024-01-09' },
-        { rank: 8, name: 'Chris L.', tier: 'Supporter', amount: 15, date: '2024-01-08' },
-        { rank: 9, name: 'Alex K.', tier: 'Supporter', amount: 10, date: '2024-01-07' },
-        { rank: 10, name: 'Jordan P.', tier: 'Participant', amount: 5, date: '2024-01-06' }
+        { rank: 1, name: 'Anonymous', tier: 'Legend', amount: 300, date: '2026-01-18' },
+        { rank: 2, name: 'John D.', tier: 'Legend', amount: 250, date: '2026-01-16' },
+        { rank: 3, name: 'Sarah M.', tier: 'Benefactor', amount: 175, date: '2026-01-14' },
+        { rank: 4, name: 'Anonymous', tier: 'Benefactor', amount: 120, date: '2026-01-12' },
+        { rank: 5, name: 'Mike T.', tier: 'Patron', amount: 85, date: '2026-01-10' },
+        { rank: 6, name: 'Emily R.', tier: 'Patron', amount: 60, date: '2026-01-08' },
+        { rank: 7, name: 'Anonymous', tier: 'Supporter', amount: 45, date: '2026-01-06' },
+        { rank: 8, name: 'Chris L.', tier: 'Supporter', amount: 35, date: '2026-01-04' },
+        { rank: 9, name: 'Alex K.', tier: 'Supporter', amount: 25, date: '2026-01-02' },
+        { rank: 10, name: 'Jordan P.', tier: 'Participant', amount: 10, date: '2026-01-01' }
     ]
 };
 
