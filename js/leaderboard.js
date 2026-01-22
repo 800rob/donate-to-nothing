@@ -8,7 +8,7 @@ const LEADERBOARD_CONFIG = {
     // Replace with your published Google Sheets URL (as JSON)
     // To get this: File > Share > Publish to web > Select sheet > Choose "Web page" > Copy link
     // Then modify URL to: https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/gviz/tq?tqx=out:json
-    googleSheetsUrl: '',
+    googleSheetsUrl: 'https://docs.google.com/spreadsheets/d/1MDZphms0w-jCoI90HGI0VYvC5_AybkKvWTe6Scl9etw/gviz/tq?tqx=out:json',
 
     // Set to true to use demo data when no Google Sheets URL is configured
     useDemoData: true,
