@@ -128,6 +128,33 @@ function initDonationForm() {
         });
     }
 
+    // PayPal button
+    const paypalBtn = document.getElementById('paypalBtn');
+    if (paypalBtn) {
+        paypalBtn.addEventListener('click', function() {
+            const selectedTier = document.getElementById('selectedTierName').textContent;
+            const donorName = document.getElementById('donorName').value;
+
+            // Extract amount from tier display
+            const amountMatch = selectedTier.match(/\$(\d+)/);
+            const amount = amountMatch ? parseInt(amountMatch[1]) : 0;
+
+            if (amount < 1) {
+                alert('Please select a donation amount first.');
+                return;
+            }
+
+            if (!donorName.trim()) {
+                alert('Please enter your name for the certificate.');
+                return;
+            }
+
+            // Open PayPal.me with the amount
+            const paypalUrl = `https://www.paypal.me/donating800/${amount}`;
+            window.open(paypalUrl, '_blank');
+        });
+    }
+
     // Preview certificate button
     const previewCertBtn = document.getElementById('previewCertBtn');
     if (previewCertBtn) {
